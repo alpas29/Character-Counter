@@ -38,6 +38,10 @@
         }, options);
 
         return this.each(function () {
+        		var limit = options.limit
+      			if (typeof $(this).attr('data-length') !== "undefined") {
+        			limit = $(this).attr('data-length');
+      			}
             var el = $(this),
                 wrapper = $("<div/>").addClass('focus-textarea').css({
                     "position": "relative",
@@ -51,9 +55,9 @@
                         "color": options.font.color
                 }).css(options.position);
             
-            if(options.limit > 0){
-                label.text("{0}/{1}".format(el.val().length, options.limit));
-                el.prop("maxlength", options.limit);
+            if(limit > 0){
+                label.text("{0}/{1}".format(el.val().length, limit));
+                el.prop("maxlength", limit);
             }else{
                 label.text(el.val().length);
             }
@@ -66,7 +70,7 @@
 
             function updateLabel(e) {
                 if(options.limit > 0){
-                    label.text("{0}/{1}".format($(this).val().length, options.limit));
+                    label.text("{0}/{1}".format($(this).val().length, limit));
                 }else{
                     label.text($(this).val().length);
                 }
