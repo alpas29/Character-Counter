@@ -1,7 +1,7 @@
 # Character Counter
 Character Counter is a small jQuery plugin for inputs and textareas to count characters in it.
 
-Demo: http://jsfiddle.net/kemalbay/ea5bb026/
+Demo: http://jsfiddle.net/alpas29/4h7p2ykq/2/
 
 #Basic usage:
 
@@ -26,3 +26,7 @@ Demo: http://jsfiddle.net/kemalbay/ea5bb026/
     you need to specify a limit. 
     If you don't want to limit your inputs set to 0.
     default: 255
+    Also you can set the attribute "data-length" on input and set this size on this input.
+    Example:
+    
+    	<input class="char-counter" type="text" data-length="200">
